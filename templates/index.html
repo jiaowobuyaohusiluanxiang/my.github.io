@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+	<title>Botany Template</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../static/css/templatemo_style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../static/css/flexslider.css" type="text/css" media="screen" />
+
+	<!-- Modernizr -->
+  	<script src="../static/slider/modernizr.js"></script>
+
+
+</head>
+<body class="templatemo_juice_bg">
+	<div id="main_container">
+		<div class="container" id="home">
+			<div class="row col-wrap">
+				<div id="left_container" class="col col-md-3 col-sm-12">
+                	<div class="templatemo_logo">
+						<a href="#"><img src="../static/images/templatemo_logo.png" alt="Botany Theme"></a>
+					</div>
+					<nav id="main_nav">
+						<ul class="nav">
+							<li class="active"><a href="/">首页</a></li>
+                            <li><a href="about.html">数据收集</a></li>
+							<li><a href="services.html">每月aqi平均指数分析</a></li>
+							<li><a href="portfolio.html">每个季度pm2.5总和分析</a></li>
+							<li><a href="contact.html">全年空气质量等级分析</a></li>
+						</ul>
+					</nav> <!-- nav -->
+
+					<!--<form  action="#" method="get" class="navbar-form" role="search">-->
+						<!--<div class="form-group">-->
+							<!--<input type="text" class="form-control" placeholder="Search" id="keyword" name="keyword">-->
+						<!--</div>-->
+						<!--<button type="submit" class="btn btn-primary" name="Search">Go</button>-->
+					<!--</form>-->
+					<!--<div>-->
+						<!--<a href="#"><img src="../static/images/facebook.png" alt="Like us on Facebook"></a>-->
+						<!--<a href="#"><img src="../static/images/twitter.png" alt="Follow us on Twitter"></a>-->
+						<!--<a href="#"><img src="../static/images/rss.png" alt="RSS feeds"></a>-->
+					<!--</div>-->
+				</div>
+				<div id="right_container" class="col col-md-9 col-sm-12">
+
+					<div class="row">
+                    	<div class="col col-md-12">
+
+                    		<h2>海康天气数据分析平台</h2>
+
+                            <div class="flexslider">
+                              <ul class="slides">
+                                <li><img src="../static/images/templatemo_slide_1.jpg" alt="slide 1" /></li>
+                                <li><img src="../static/images/templatemo_slide_2.jpg" alt="slide 2" /></li>
+                                <li><img src="../static/images/templatemo_slide_3.jpg" alt="slide 3" /></li>
+                              </ul>
+                            </div>
+
+        				</div>
+                    </div>
+
+                    {% for v in data %}
+                    <article class="row">
+                        <div class="col col-md-12">
+                            <img src="{{ v[1] }}"alt="Pic 1" class="img-thumbnail img-responsive img-left">
+                            <h3>{{ v[2] }}</h3>
+                            <p>{{ v[5] }}</p>
+                            <p><span>{{ v[3] }}</span>&nbsp;&nbsp;<span>{{ v[4] }}</span></p>
+                        </div>
+                    </article>
+                    {% endfor %}
+
+
+				</div>
+			</div>
+			<footer class="row credit">
+				<div class="col col-md-12">
+					<div id="templatemo_footer">
+						海康实训  数据分析平台
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+  <!-- FlexSlider -->
+  <script defer src="../static/slider/jquery.flexslider.js"></script>
+
+  <script type="../static/text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
